@@ -1,14 +1,21 @@
 import React from 'react';
-import { TextField } from './';
 import { AddCircleOutline, RemoveCircleOutline } from '@material-ui/icons';
 
-const RuleParameter = () => {
+const RuleParameter = ({ id, addRule, removeRule }) => {
   return (
     <div className="container__parameter">
-      <TextField />
+      <input
+        type="text"
+        id="fname"
+        name="firstname"
+        placeholder="Insert Parameter"
+      />
       <div className="container__parameter-controls">
-        <RemoveCircleOutline style={{ color: 'grey' }} />
-        <AddCircleOutline />
+        <RemoveCircleOutline
+          onClick={() => removeRule(id)}
+          style={{ color: 'grey' }}
+        />
+        <AddCircleOutline onClick={() => addRule()} />
       </div>
     </div>
   );

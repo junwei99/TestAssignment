@@ -1,6 +1,6 @@
 import React from 'react';
 import Dialog from '@material-ui/core/Dialog';
-import { TextField, Rule, DropdownSelect } from './';
+import { TextField, Rules, DropdownSelect } from './';
 
 const ModalPopup = ({ open, onClose }) => {
   return (
@@ -24,7 +24,27 @@ const ModalPopup = ({ open, onClose }) => {
               <h4>of the below conditions are met.</h4>
             </div>
           </div>
-          <Rule />
+          <Rules />
+          <div className="container__form">
+            <div className="container__conditions">
+              <h4>then revenue is</h4>
+              <input
+                type="number"
+                id="fname"
+                name="firstname"
+                placeholder="Enter Number"
+                style={{ width: '150px', marginLeft: '10px' }}
+              />
+              <h4 style={{ marginLeft: '10px' }}>%</h4>
+            </div>
+
+            <div className="container__buttons">
+              <button className="btn btn__confirm">Confirm</button>
+              <button className="btn btn__cancel" onClick={() => onClose()}>
+                Cancel
+              </button>
+            </div>
+          </div>
         </div>
       </Dialog>
     </>

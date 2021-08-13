@@ -1,13 +1,13 @@
 import React from 'react';
 import { DropdownSelect, RuleParameter } from './';
 
-const Rule = () => {
+const Rule = ({ id, addRule, removeRule }) => {
   return (
     <div className="container__rule">
       <div className="container__rule-item">
         <DropdownSelect />
         <DropdownSelect />
-        <RuleParameter />
+        <RuleParameter id={id} addRule={addRule} removeRule={removeRule} />
       </div>
     </div>
   );
