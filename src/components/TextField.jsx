@@ -5,7 +5,7 @@ const TextField = () => {
     <>
       <input
         type="text"
-        id="fname"
+        id="inputTitle"
         name="firstname"
         placeholder="Enter group title here"
       />

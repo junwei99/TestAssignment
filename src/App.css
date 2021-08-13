@@ -120,11 +120,15 @@ input[type='submit'] {
 .container__parameter {
   display: flex;
   width: 70%;
+  position:relative;
 }
 
 .container__parameter-controls {
   display: flex;
   margin: auto;
+  position: absolute;
+  top: 10px;
+  left : 350px;
 }
 
 .container__parameter-controls * {
@@ -162,4 +166,21 @@ input[type='submit'] {
 
 .btn__cancel {
   background-color: #888888;
+}
+
+.txt__ruleParameter{
+  position: absolute;
+  right: 20px;
+  bottom: 12px;
+  
+}
+
+.btnParameter{
+  cursor: pointer;
+}
+
+.container__rule-parameter{
+  display: flex;
+  flex-direction: column;
+  width: 500px;
 }

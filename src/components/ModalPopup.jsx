@@ -20,7 +20,14 @@ const ModalPopup = ({ open, onClose }) => {
             <TextField />
             <div className="container__conditions">
               <h4>If</h4>
-              <DropdownSelect />
+              <div className="custom-select" style={{ width: '150px' }}>
+                <select>
+                  <option value="0">ALL</option>
+                  <option value="1">SOME</option>
+                  <option value="2">Lorem</option>
+                  <option value="3">Ipsum</option>
+                </select>
+              </div>
               <h4>of the below conditions are met.</h4>
             </div>
           </div>
@@ -39,7 +46,7 @@ const ModalPopup = ({ open, onClose }) => {
             </div>
 
             <div className="container__buttons">
-              <button className="btn btn__confirm">Confirm</button>
+              <button className="btn btn__confirm" onClick={() => alert('Form Submitted!')}>Confirm</button>
               <button className="btn btn__cancel" onClick={() => onClose()}>
                 Cancel
               </button>

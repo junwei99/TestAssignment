@@ -2,35 +2,36 @@ import { Rule } from './';
 import { useState } from 'react';
 
 const Rules = () => {
-  const [rules, setRules] = useState([1]);
+  const [rules, setRules] = useState([0]);
+  const [id, setId] = useState(1);
 
   const addRule = () => {
-    setRules([...rules, 1]);
+    setId(id + 1);
+    setRules([...rules, id+1]); 
+    console.log('rules after add: ' + rules);
   };
 
-  const removeRule = (index) => {
-    let rulesValues = [];
+  const removeRule = (id) => {
+    let rulesValues = [...rules];
 
-    rulesValues = rules.filter((rule, i) => {
-      console.log('i =' + i);
-      return i !== index;
-    });
+    const filteredRules = rulesValues.filter((rule) => {
+      return rule !== id
+    })
 
-    // rulesValues
-    //   .slice(0, index - 1)
-    //   .concat(rulesValues.slice(index, rulesValues.length));
+    setRules(filteredRules);
 
-    console.log('rulesValues : ' + rulesValues);
-
-    setRules([rulesValues]);
+    console.log('rulesValues' + rulesValues)
+    console.log('filteredRules' + filteredRules)
   };
 
   return (
     <>
       {rules.map((rule, index) => (
         <Rule
-          key={index}
-          id={index}
+          lastId = {id}
+          key={rule}
+          id={rule}
+          rules = {rules}
           addRule={addRule}
           removeRule={removeRule}
         />
