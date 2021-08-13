@@ -9,18 +9,29 @@
   width: 100%;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  padding-top: 100px;
 }
 
 .btnOpenModal {
+  margin-top: 50px;
   width: 150px;
   height: 60px;
   background-color: #ea7f24;
   border: none;
   cursor: pointer;
+  border-radius : 5px;
+  color : white;
+}
+
+p , .container__social{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
 }
 
 .btnOpenModal:hover {
-  background-color: #da7823;
+  filter: brightness(0.90);
 }
 
 .form__rule {
@@ -183,4 +194,9 @@ input[type='submit'] {
   display: flex;
   flex-direction: column;
   width: 500px;
+}
+
+.container__social{
+  display: flex;
+  gap: 10px;
 }
