@@ -1,14 +1,14 @@
 import React from 'react';
 import {useState} from 'react';
-import { DropdownSelect, RuleParameter } from './';
+import { RuleParameter } from './';
 
 const Rule = ({ lastId, id, rules, addRule, removeRule }) => {
   const [params, setParams] = useState([0]);
   const [lastParamsId, setLastParamsId] = useState(1);
 
   const addParam = () => {
-    setLastParamsId(id + 1);
-    setParams([...params, lastParamsId]); 
+    setLastParamsId(lastParamsId + 1);
+    setParams([...params, lastParamsId + 1]); 
     console.log('params after add: ' + params);
   };
 

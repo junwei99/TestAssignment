@@ -42,16 +42,21 @@ const RuleParameter = ({ paramId, lastId, id, arrParams, addParam, removeParam, 
         placeholder="Insert Parameter"
         
       />
+      {isParamsLastValue(arrParams, paramId) ? (
       <div className="btnParameter" onClick={() => addParam()}>
-        {isParamsLastValue ? (<h4 className="txt__ruleParameter" style={{color: 'blue'}}>add rule</h4>) : (<h4 className="txt__ruleParameter" style={{color: 'red'}}>add rule</h4>)} 
-      </div>
+        <h4 className="txt__ruleParameter" style={{color: 'blue'}}>add rule</h4>
+      </div>) : 
+      (<div className="btnParameter" onClick={() => removeParam(paramId)}>
+      <h4 className="txt__ruleParameter" style={{color: 'red'}}>remove rule</h4>
+    </div>)} 
+      
       <div className="container__parameter-controls">
-        {(isIdTheOnlyValueInRules(rules)) && (<RemoveCircleOutline
+        {(isParamsLastValue(arrParams, paramId) && isIdTheOnlyValueInRules(rules)) && (<RemoveCircleOutline
           onClick={() => removeRule(id)}
           style={{ color: 'grey' }}
         />)}
         
-        {( isIdLastValueInRules(rules, id) ) && (<AddCircleOutline onClick={() => addRule()} />)}
+        {( isParamsLastValue(arrParams, paramId) && isIdLastValueInRules(rules, id) ) && (<AddCircleOutline onClick={() => addRule()} />)}
         
       </div>
     </div>

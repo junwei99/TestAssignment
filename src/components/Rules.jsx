@@ -7,7 +7,7 @@ const Rules = () => {
 
   const addRule = () => {
     setId(id + 1);
-    setRules([...rules, id+1]); 
+    setRules([...rules, id + 1]); 
     console.log('rules after add: ' + rules);
   };
 
